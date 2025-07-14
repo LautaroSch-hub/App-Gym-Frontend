@@ -1,0 +1,8 @@
+/* Este es el contenedor de todos los elementos */
+.contain-all{
+    margin-top: 60px !important;
+}
+/* Estilo de los titulos */
+.text-editar-ejercicio{
+    color: #eee;
+}

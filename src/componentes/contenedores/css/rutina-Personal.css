@@ -1,0 +1,58 @@
+/* Este es el contenedor de todos los elementos */
+.contain-all-prs{
+    margin-top: 60px !important;
+}
+/* Este es el título H2 de "Rutinas Personalizadas" */
+.h2-rutina_personal{
+    font-family: sans-serif;
+    font-size: 30px;
+    text-decoration: underline;
+    color: #eee;
+}
+/* Este es el contenedor de todos los días en conjunto */
+.contenedor-semana{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px;
+    justify-content: center;
+}
+/* Este es el contenedor de cada día de manera individual (contiene la tarjeta completa + el día */
+.contenedor-dia{
+    background: transparent;
+    padding: 12px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    height: fit-content;
+}
+/* Este es el título "H3" de cada dia "Lunes, Martes, Miercoles... " */
+.h3-dia_personal{
+    color: #eee;
+}
+/* Este es el contenedor de cada tarjeta de rutina de manera individual */
+.contenedor-rutina_personal{
+    margin-top: 10px;
+}
+/* Este es el link (boton) de la descripcion de cada rutina de manera individual */
+.link-carta_personal{
+    width: 20vw;
+    background-color: #aa1f1f !important;
+    border-color: #941919 !important;
+}
+@media (max-width: 700px) {
+    .contain-all-prs{
+        margin-top: 100px !important;
+        width: 95%;
+    }
+.contenedor-semana{
+    display: flex;
+    flex-direction: column;
+    }
+.link-carta_personal{
+    width: 90%;
+    }
+
+}

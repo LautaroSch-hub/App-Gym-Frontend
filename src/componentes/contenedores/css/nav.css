@@ -1,0 +1,28 @@
+/* estilo de la navbar */
+nav{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    border: none;
+    z-index: 1;
+}
+/* botones */
+.nav__button{
+    margin: 5px 10px;
+    padding: 3px 6px;
+    border-radius: 20px;
+    background-color: #4f4f4f;
+    color: #ccc;
+    text-decoration: none;
+}
+/* Este es el boton de admin dashboard */
+.admin{
+    text-decoration: none;
+}
+/* Es una pseudoclase específica de WebKit (el motor de navegación de navegadores como Chrome y Safari) y sirve para aplicar estilos a cualquier tipo de enlace, tanto si ya fue visitado como si no. */
+a:-webkit-any-link {
+    color: #e0e0e0;
+    cursor: pointer;
+    text-decoration: none;
+}

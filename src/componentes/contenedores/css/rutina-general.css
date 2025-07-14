@@ -1,0 +1,82 @@
+/* Este es el contenedor de todos los elementos */
+.contain-all-general{
+    margin-top: 60px !important;
+}
+/* Este es el título H2 de "Rutinas Generales" */
+.h2-rutina_general{
+    font-family: sans-serif;
+    font-size: 30px;
+    color: #eee;
+    text-decoration: underline;
+}
+/* Este es el contenedor de los label */
+.contenedor-label{
+    align-items: center;
+    color: #eee;
+}
+/* Clase de cada label */
+.label-filtro{
+    margin-left: 10px;
+}
+/* Este es el contenedor de todas las rutinas en conjunto */
+#rutinas-container{
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* Este es el link (boton) de la descripcion de cada rutina de manera individual (chequear que el link contiene la carta y no al reves) */
+.link-carta_general{
+    display: flex;
+}
+/* Este es el contenedor de cada tarjeta de rutina de manera individual */
+.carta-general{
+    width: 20vw;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color:#222 ;
+    box-shadow:1px 0 8px #ccc;
+    border-radius: 10px;
+    margin: 15px 1rem;
+    height: 370px;
+}
+/* Este es el título "H5" de cada tarjeta de manera individual */
+.h5-carta_general{
+    padding-top: 5px;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-size: 18px;
+    font-weight: bold;    
+}
+
+/* Responsividad para celular */
+@media (max-width: 700px) {
+    .contain-all-general{
+        margin-top: 100px !important;
+    }
+    .carta-general{
+        width: auto;
+    }
+    .d-flex {
+        flex-direction: column;
+        width: 100%;
+    }
+    #rutinas-container{
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+    .link {
+        display: flex;
+        width: 400px;
+        height: 400px;
+    }
+    .testeo {
+        width: 400px;
+    }
+}

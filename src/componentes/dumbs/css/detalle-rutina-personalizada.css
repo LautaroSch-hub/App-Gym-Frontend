@@ -1,0 +1,31 @@
+.contenedor-detail-pr{
+    margin-top: 3.5rem;
+}
+.ul-detailsPrs{
+    display: flex;
+    align-items: center;
+}
+
+.li-btn-style-prs{
+    border: solid 2px #333 !important;
+    border-radius: 7px !important;
+    width: 50% ;
+    margin-bottom: 10px;
+}
+
+.li-btn-style-prs:hover{
+    background-color: #333;
+    border-color: #333 !important;
+    color: #eee !important;
+}
+@media (max-width: 700px) {
+    .imagen-rutina{
+        height: 300px !important;
+    }
+    .contenedor-detail-pr{
+        margin-top: 100px !important;
+    }
+    .li-btn-style-prs{
+        width: 100% ;
+    }
+    }

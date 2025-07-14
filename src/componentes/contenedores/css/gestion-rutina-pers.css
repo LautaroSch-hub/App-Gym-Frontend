@@ -1,0 +1,33 @@
+/* Este es el contenedor de todos los elementos */
+.contain-all{
+    margin-top: 60px !important;
+}
+/* Este es el título H2 de "Administrar Rutinas Personalizadas" */
+.h2-gestion_rutinas_pers{
+    color: #eee;
+    text-decoration: underline;
+}
+/* Estilo del texto del label*/
+.label-gestion_rutinas_pers{
+    color: #eee;
+}
+/* Este es el título "H3" de cada dia "Lunes, Martes, Miercoles... " */
+.h3-dia_gestion_pers{
+    color: #eee;
+}
+/* Este es el contenedor de cada tarjeta de rutina de manera individual */
+.contenedor-gestion_pers{
+    justify-content: center
+}
+/* Este es el contenedor de cada tarjeta de rutina de manera individual */
+.carta-gestion_pers{
+    position: unset !important;
+}
+/* Este es el título "H5" de cada tarjeta de manera individual */
+.h5-carta_gestion_pers{
+    text-decoration: underline;
+}
+/* Este es el contenedor de los botones de gestion de cada tarjeta */
+.contenedor-botones_gestion_pers{
+    margin-top: 10px;
+}

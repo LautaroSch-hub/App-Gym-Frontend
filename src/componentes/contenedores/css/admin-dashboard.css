@@ -1,0 +1,28 @@
+/* Este es el contenedor de todos los elementos */
+.contain-all-admin{
+    margin-top: 60px !important;
+}
+/* Este es el título H1 del panel (revisar si el H1 es correcto de usar) */
+.h1-panel_admin{
+    color: #eee;
+    text-decoration: underline;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+/* Este es el contenedor de cada sección de manera individual del panel */
+.contenedor-link_admin{
+    margin: 6px;
+    flex: 0 0 auto;
+}
+/* Este es el link (boton) de cada sección individual del panel */
+.link-boton_admin{
+    width: 20vw;
+}
+@media (max-width: 700px) {
+    .contain-all-admin{
+        margin-top: 100px !important;
+    }
+    .link-boton_admin{
+        width: 100%;
+    }
+}

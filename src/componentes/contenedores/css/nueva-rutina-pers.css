@@ -1,0 +1,37 @@
+/* Este es el contenedor del formulario completo */
+.contenedor-form_newRutine_pers{
+    margin: auto;
+    margin-top: 80px;
+    box-shadow: 0 0 15px white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 50vw;
+} 
+/* Este es el fieldset dentro del formulario */
+.field-newRutine_pers{
+    border: solid 1px #666;
+    padding: 10px;
+    border-radius: 9px;
+    margin: 10px;
+}
+/* Esta es la leyenda del fieldset "CREAR NUEVA RUTINA PERSONALIZADA" */
+.legend-field_pers{
+    text-transform: uppercase;
+    padding: 0 6px;
+    color: #eee;
+    font-size: 20px;
+    float: none;
+    width: auto;
+    margin-bottom: 0;
+}
+/* Este es la clase de cada label del formulario */
+.form-label_pers{
+    color: #eee;
+}
+@media (max-width: 700px) {
+    .contenedor-form_newRutine_pers{
+        margin-top: 100px !important;
+        width: 95%;
+    }
+
+}
