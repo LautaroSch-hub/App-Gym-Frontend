@@ -37,7 +37,7 @@
     box-shadow:1px 0 8px #ccc;
     border-radius: 10px;
     margin: 15px 1rem;
-    height: 370px;
+    min-height: 370px;
 }
 /* Este es el título "H5" de cada tarjeta de manera individual */
 .h5-carta_general{
