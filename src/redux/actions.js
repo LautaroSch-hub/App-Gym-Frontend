@@ -19,7 +19,7 @@ export const GET_MUSCULOS = "GET_MUSCULOS";
 export const DELETE_MUSCULOS_RUTINAPER = "DELETE_MUSCULOS_RUTINAPER";
 
 //ACTIONS CREATORS
-const link="https://backgon.onrender.com/"
+const link="https://backgon.onrender.com"
 export const login = (email, password) => async (dispatch) => {
   try {
     const response = await axios.post(`${link}/login`, { email, password });
