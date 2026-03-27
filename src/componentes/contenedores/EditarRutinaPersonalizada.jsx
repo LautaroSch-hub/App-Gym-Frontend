@@ -65,11 +65,11 @@ const EditarRutinaPersonalizada = () => {
     if (selectedFile) {
       const formData = new FormData();
       formData.append("file", selectedFile);
-      formData.append("upload_preset", "App.gym");
+      formData.append("upload_preset", "Gym-gon");
 
       try {
         const response = await axios.post(
-          "https://api.cloudinary.com/v1_1/dj8byz5uz/image/upload",
+          "https://api.cloudinary.com/v1_1/daqwbmkfa/image/upload",
           formData
         );
         const uploadedImageUrl = response.data.secure_url;
