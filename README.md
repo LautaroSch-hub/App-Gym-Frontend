@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Gym Manager (front)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React + Vite + Tailwind + React Router + Axios. Se conecta al back de `https://backgon.onrender.com`.
 
-## Available Scripts
+## Cómo correrlo
 
-In the project directory, you can run:
+```bash
+npm install
+cp .env.example .env     # opcional: cambiá VITE_API_URL si usás el back en tu computadora
+npm run dev
+```
 
-### `npm start`
+Para publicarlo: `npm run build` y subí la carpeta `dist`. Funciona en Vercel o Netlify sin configurar nada más (ya incluye las reglas para que las rutas internas no den error 404).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> Antes de usar esta versión, actualizá el back (ver `ACTUALIZACION.md` en la carpeta del back). Hay que definir `JWT_SECRET` en Render.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Qué incluye
 
-### `npm test`
+**Usuario**
+- Mi semana: su rutina de cada día (lunes a sábado) y botón para marcar la asistencia de hoy.
+- Rutinas generales con filtros por dificultad y músculo.
+- Ejercicios con video de YouTube (se ve desde el celular).
+- Asistencia: calendario del mes y cuántas veces fue.
+- Progreso: anota peso y repeticiones por ejercicio y ve su evolución en un gráfico.
+- Medidas: peso, grasa y medidas corporales con gráfico.
+- Mi cuenta: cambiar su contraseña e instalar la app en el celular.
+- Aviso dentro de la app cuando faltan 5 días o menos para que venza la membresía.
+- Con la membresía vencida solo ve una pantalla de bloqueo hasta que el administrador la renueve.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Administrador y super admin** (mismas funciones; solo el super admin no se puede eliminar)
+- Panel con vencimientos: quién está vencido o por vencer, con botón para renovar.
+- Usuarios: crear (con días de membresía), renovar, cambiarles la contraseña, darles o quitarles el rol de administrador y eliminar. Filtros por membresía.
+- Ficha de cada usuario: plan semanal, historial de renovaciones, asistencia, progreso y medidas.
+- Rutinas generales: dificultad, músculos y ejercicios.
+- Ejercicios: biblioteca reutilizable en rutinas generales y personalizadas.
 
-### `npm run build`
+## Sesión y membresía
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- La sesión dura 3 días; después hay que volver a ingresar.
+- Renovar suma días: si la membresía sigue vigente se suman al vencimiento actual; si ya venció, cuentan desde hoy. El último día es inclusive.
+- El servidor gratuito de Render se duerme: la primera vez que alguien entra puede tardar hasta un minuto y la pantalla de ingreso lo avisa.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## App instalable (PWA)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+En Android (Chrome) aparece el botón "Instalar Gym Manager" en Mi cuenta. En iPhone hay que abrir la app en Safari, tocar Compartir y elegir "Agregar a pantalla de inicio". La app solo se puede instalar desde la versión publicada (con https), no desde `npm run dev`.
 
-### `npm run eject`
+## Estructura
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+public/                  # manifest, service worker e íconos de la app
+src/
+  services/api.js        # todos los endpoints del back
+  context/AuthContext    # sesión, expiración a los 3 días y estado de la membresía
+  components/            # Layout, WeekGrid, ExerciseList, LineChart, Membresia, ui, Toast
+  components/seguimiento # asistencia, progreso y medidas (las usan el usuario y el admin)
+  pages/                 # Login, MiSemana, Rutinas, Asistencia, Progreso, Medidas, Cuenta
+  pages/admin/           # Dashboard, Usuarios, UsuarioDetalle, RutinasAdmin, RutinaEditor, Ejercicios
+```
