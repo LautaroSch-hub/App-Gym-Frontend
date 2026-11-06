@@ -1,6 +1,6 @@
 # Gym Manager (front)
 
-React + Vite + Tailwind + React Router + Axios. Se conecta al back de `https://backgon.onrender.com`.
+React + Vite + Tailwind + React Router + Axios. Se conecta al back de `https://app-gym-ikz7.onrender.com`.
 
 ## Cómo correrlo
 
